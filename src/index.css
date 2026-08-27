@@ -1,0 +1,187 @@
+/* -------------------------------------------------------------
+   Design tokens
+   A calm, trustworthy healthcare/education palette:
+   deep navy-teal + muted sage + warm off-white + restrained clay accent.
+------------------------------------------------------------- */
+:root {
+  /* Color */
+  --color-navy: #16324a;
+  --color-navy-dark: #0e2333;
+  --color-sage: #6f9c8d;
+  --color-sage-light: #e6efe9;
+  --color-offwhite: #faf6ee;
+  --color-white: #ffffff;
+  --color-accent: #bd8752;
+  --color-accent-dark: #9c6d3e;
+  --color-ink: #1f2a2e;
+  --color-muted: #57696b;
+  --color-border: #e1ddd0;
+
+  /* Type */
+  --font-display: 'Lora', Georgia, 'Times New Roman', serif;
+  --font-body: 'Work Sans', system-ui, -apple-system, sans-serif;
+
+  /* Layout */
+  --content-max: 1120px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --shadow-sm: 0 1px 2px rgba(15, 35, 51, 0.06), 0 1px 1px rgba(15, 35, 51, 0.04);
+  --shadow-md: 0 12px 32px rgba(15, 35, 51, 0.10), 0 2px 8px rgba(15, 35, 51, 0.06);
+  --header-height: 76px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--color-offwhite);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--color-navy);
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+  font-weight: 600;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: inherit;
+}
+
+img, svg {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+  margin-bottom: 0.9em;
+}
+
+.section {
+  padding: 88px 0;
+  scroll-margin-top: var(--header-height);
+}
+
+.section-head {
+  max-width: 640px;
+  margin: 0 0 48px;
+}
+
+.section-head.center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.section--alt {
+  background: var(--color-sage-light);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.98rem;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background: var(--color-accent-dark);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: rgba(250, 246, 238, 0.5);
+  color: inherit;
+}
+
+.btn-outline:hover {
+  border-color: currentColor;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--color-navy);
+  color: var(--color-navy);
+}
+
+.btn-ghost:hover {
+  background: var(--color-navy);
+  color: var(--color-white);
+}
+
+.btn-sm {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+}
