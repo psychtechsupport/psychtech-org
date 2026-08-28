@@ -36,7 +36,7 @@ jobs:
         run: npm ci
 
       - name: Build site
-        run: npm run build -- --base=/psychtech-org/
+        run: npm run build -- --base=/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
