@@ -8,8 +8,16 @@ const NAV_LINKS = [
   { label: 'Donate', href: '#donate' },
 ]
 
-function Header() {
+function Header({ onDonateClick }) {
   const [menuOpen, setMenuOpen] = useState(false)
+
+  function handleNavClick(event, link) {
+    setMenuOpen(false)
+    if (link.label === 'Donate') {
+      event.preventDefault()
+      onDonateClick()
+    }
+  }
 
   return (
     <header className="header">
@@ -37,7 +45,7 @@ function Header() {
           <ul>
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
-                <a href={link.href} onClick={() => setMenuOpen(false)}>
+                <a href={link.href} onClick={(event) => handleNavClick(event, link)}>
                   {link.label}
                 </a>
               </li>
