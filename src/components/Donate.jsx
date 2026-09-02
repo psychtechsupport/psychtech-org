@@ -1,4 +1,4 @@
-function Donate({ onDonateClick }) {
+function Donate() {
   return (
     <section id="donate" className="section donate">
       <div className="container donate__inner">
@@ -9,9 +9,9 @@ function Donate({ onDonateClick }) {
           student-focused information for people exploring the Psychiatric
           Technician profession.
         </p>
-        <button type="button" className="btn btn-primary" onClick={onDonateClick}>
+        <a className="btn btn-primary" href="#donate">
           Donate
-        </button>
+        </a>
       </div>
     </section>
   )
